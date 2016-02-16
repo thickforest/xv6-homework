@@ -86,7 +86,7 @@ runcmd(struct cmd *cmd)
     pcmd = (struct pipecmd*)cmd;
     // fprintf(stderr, "pipe not implemented\n");
     // Your code here ...
-    if (fork1() == 0) {
+    //if (fork1() == 0) {
       pipe(p);
       // fprintf(stderr, "p[0]=%d p[1]=%d\n", p[0], p[1]);
       if (fork1() == 0) {
@@ -105,8 +105,8 @@ runcmd(struct cmd *cmd)
       // fprintf(stderr, "left_cmd->argv[0]=%s\n", left_cmd->argv[0]);
       // execvp(left_cmd->argv[0], left_cmd->argv);
       runcmd(pcmd->left);
-    }
-    wait(&r);
+    //}
+    //wait(&r);
     break;
   }    
   exit(0);
